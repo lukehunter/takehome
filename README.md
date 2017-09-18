@@ -29,7 +29,8 @@ This tool is very much a demo project, and the following features would be neede
 * Handling of long running scans -- currently they will simply timeout
 * Pagination support (currently the entire scan history is listed on one page)
 * Support for ipv6 addresses
-* Unit tests
+* Unit tests (probably requires some refactoring)
 * Logging
-* Rest api / formatting on client side
-* Allow configuring port range
+* Rest api
+* Client side formatting in js
+* Configurable port range
