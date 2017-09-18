@@ -29,6 +29,7 @@ Limitations
 -----------
 This tool is very much a demo project, and the following features would be needed in a production implementation.
 
+* DOS protection (currently no rate limiting on scans)
 * Handling of long running scans -- currently they will simply timeout
 * Pagination support (currently the entire scan history is listed on one page)
 * Support for ipv6 addresses
