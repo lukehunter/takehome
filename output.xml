@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.60 scan initiated Sat Sep 16 08:40:29 2017 as: nmap -p1-100 -oX output.xml 127.0.0.1 -->
+<nmaprun scanner="nmap" args="nmap -p1-100 -oX output.xml 127.0.0.1" start="1505576429"
+         startstr="Sat Sep 16 08:40:29 2017" version="7.60" xmloutputversion="1.04">
+    <scaninfo type="connect" protocol="tcp" numservices="100" services="1-100"/>
+    <verbose level="0"/>
+    <debugging level="0"/>
+    <host starttime="1505576429" endtime="1505576429">
+        <status state="up" reason="syn-ack" reason_ttl="0"/>
+        <address addr="127.0.0.1" addrtype="ipv4"/>
+        <hostnames>
+            <hostname name="localhost" type="PTR"/>
+        </hostnames>
+        <ports>
+            <extraports state="closed" count="99">
+                <extrareasons reason="conn-refused" count="99"/>
+            </extraports>
+            <port protocol="tcp" portid="80">
+                <state state="open" reason="syn-ack" reason_ttl="0"/>
+                <service name="http" method="table" conf="3"/>
+            </port>
+        </ports>
+        <times srtt="372" rttvar="141" to="100000"/>
+    </host>
+    <runstats>
+        <finished time="1505576429" timestr="Sat Sep 16 08:40:29 2017" elapsed="0.05"
+                  summary="Nmap done at Sat Sep 16 08:40:29 2017; 1 IP address (1 host up) scanned in 0.05 seconds"
+                  exit="success"/>
+        <hosts up="1" down="0" total="1"/>
+    </runstats>
+</nmaprun>
