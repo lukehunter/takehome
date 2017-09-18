@@ -7,14 +7,15 @@ import (
     "fmt"
     "strings"
     "strconv"
+    "os"
 )
 
 var db *sql.DB
 
 func InitDB() {
     var err error
-    // todo read credentials from config
-    db, err = sql.Open("mysql", "takehomeuser1:poop@/takehome1")
+
+    db, err = sql.Open("mysql", os.Getenv("TAKEHOME_DB_CONN"))
     if err != nil {
         log.Panic(err)
     }

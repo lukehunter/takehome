@@ -8,10 +8,13 @@ This tool uses nmap, and running nmap on public hosts may get you in trouble wit
 
 Setup
 -----
-It is assumed that you already have nmap and MySQL installed on the server where this app will be running. First set the following environment variables:
-MySQL address
-Database name
-Database credentials
+It is assumed that you already have nmap and MySQL installed on the server where this app will be running. Create a new database and user in MySQL by running createdb.sh then run the following using the database name you used when running createdb.sh:
+
+cat initdb.sql | mysql -uroot -p -hhost mydbname
+
+Set the TAKEHOME_DB_CONN variable with the database connection string using the user and password you used when running createdb.sh, e.g. if running MySQL on the same machine as the app:
+
+export TAKEHOME_DB_CONN="newuser:newpassword@/mydbname"
 
 URLs
 ----

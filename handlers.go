@@ -51,11 +51,11 @@ func FormScan(w http.ResponseWriter, r *http.Request) {
     }
 
     if len(scans) > 1 {
-
+        PrintDiff(w, scans[0], scans[1])
     }
 
     for _, scan := range scans {
-
+        fmt.Fprintln(w, scan.DatePerformed, scan.Ip, scan.RawPorts)
     }
 }
 
@@ -80,6 +80,8 @@ func PrintDiff(w http.ResponseWriter, scan0, scan1 Scan) {
             closed = append(closed, k)
         }
     }
+
+    fmt.Fprintf(w, "opened: %v closed: %v\n", opened, closed)
 }
 
 func PrintScan(w http.ResponseWriter, scan Scan) {
